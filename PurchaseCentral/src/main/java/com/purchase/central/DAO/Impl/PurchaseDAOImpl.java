@@ -8,7 +8,6 @@ import com.purchase.central.DAO.PurchaseDAO;
 import com.purchase.central.DTO.Response.ReceiptResponseDTO;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
-import org.springframework.util.ResourceUtils;
 
 import java.util.List;
 
@@ -39,7 +38,6 @@ public class PurchaseDAOImpl implements PurchaseDAO {
     public List<ReceiptResponseDTO> readJson(){
         try{
             ObjectMapper objectMapper = new ObjectMapper();
-            //return objectMapper.readValue(ResourceUtils.getFile("classpath:static/receipts.json"), new TypeReference<List<ReceiptResponseDTO>>() {});
             return objectMapper.readValue(new ClassPathResource("static/receipts.json").getFile(), new TypeReference<List<ReceiptResponseDTO>>() {});
         } catch (Exception e){
             throw new RuntimeException("Error reading JSON file");

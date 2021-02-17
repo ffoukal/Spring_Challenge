@@ -1,10 +1,12 @@
 package com.example.cart.DAO;
 
 import com.example.cart.DTO.Request.ArticleRequestDTO;
+import com.example.cart.DTO.Response.ArticleResponseDTO;
 import com.example.cart.DTO.Response.CartResponseDTO;
-
-import java.util.List;
+import org.springframework.http.ResponseEntity;
 
 public interface CartDAO {
-    CartResponseDTO addItemToCart(ArticleRequestDTO cart);
+    CartResponseDTO addItemToCart(ArticleResponseDTO cart);
+    CartResponseDTO getCart();
+    CartResponseDTO delete(Integer id);
 }

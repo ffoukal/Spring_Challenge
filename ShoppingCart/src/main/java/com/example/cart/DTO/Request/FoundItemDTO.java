@@ -1,8 +1,6 @@
-package com.example.searchengine.DTO.Response;
+package com.example.cart.DTO.Request;
 
-import java.util.Objects;
-
-public class ProductFoundResponseDTO {
+public class FoundItemDTO {
     private Integer id;
     private String name;
     private String category;
@@ -44,20 +42,20 @@ public class ProductFoundResponseDTO {
         this.brand = brand;
     }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
     public Double getPrice() {
         return price;
     }
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     public Boolean getFreeShipping() {
@@ -75,18 +73,4 @@ public class ProductFoundResponseDTO {
     public void setPrestige(String prestige) {
         this.prestige = prestige;
     }
-
-    @Override
-    public String toString() {
-        return this.getName() + " " + this.getPrice();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProductFoundResponseDTO that = (ProductFoundResponseDTO) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(category, that.category) && Objects.equals(brand, that.brand) && Objects.equals(price, that.price) && Objects.equals(quantity, that.quantity) && Objects.equals(freeShipping, that.freeShipping) && Objects.equals(prestige, that.prestige);
-    }
-
 }

@@ -8,5 +8,6 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface PurchaseService {
-    public ResponseEntity<PurchaseResponseDTO> purchase(PurchaseRequestDTO request);
+    ResponseEntity<PurchaseResponseDTO> purchase(PurchaseRequestDTO request);
+    ResponseEntity checkout();
 }
