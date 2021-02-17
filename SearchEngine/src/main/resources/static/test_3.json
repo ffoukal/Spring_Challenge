@@ -1,0 +1,82 @@
+[
+  {
+    "id": 19,
+    "name":"Celular S20+",
+    "category":"Celulares",
+    "brand":"Samsung",
+    "price":150000,
+    "quantity":1,
+    "freeShipping":true,
+    "prestige":"*****"
+  },
+  {
+    "id": 12,
+    "name":"Calza running",
+    "category":"Deportes",
+    "brand":"Nike",
+    "price":7600,
+    "quantity":10,
+    "freeShipping":false,
+    "prestige":"****"
+  },
+  {
+    "id": 15,
+    "name":"Desmalezadora",
+    "category":"Herramientas",
+    "brand":"Makita",
+    "price":9600,
+    "quantity":5,
+    "freeShipping":true,
+    "prestige":"****"
+  },
+  {
+    "id": 21,
+    "name":"Fresadora",
+    "category":"Herramientas",
+    "brand":"Black & Decker",
+    "price":15000,
+    "quantity":2,
+    "freeShipping":true,
+    "prestige":"****"
+  },
+  {
+    "id": 25,
+    "name":"Martillo",
+    "category":"Herramientas",
+    "brand":"Black & Decker",
+    "price":400,
+    "quantity":10,
+    "freeShipping":false,
+    "prestige":"****"
+  },
+  {
+    "id": 26,
+    "name":"Remera lisa",
+    "category":"Indumentaria",
+    "brand":"Americanino",
+    "price":1200,
+    "quantity":3,
+    "freeShipping":true,
+    "prestige":"****"
+  },
+  {
+    "id": 28,
+    "name":"Jean azul",
+    "category":"Indumentaria",
+    "brand":"Levis",
+    "price":5000,
+    "quantity":3,
+    "freeShipping":false,
+    "prestige":"****"
+  },
+  {
+    "id": 29,
+    "name":"IPhone 9",
+    "category":"Celulares",
+    "brand":"Apple",
+    "price":100000,
+    "quantity":10,
+    "freeShipping":true,
+    "prestige":"****"
+  }
+]

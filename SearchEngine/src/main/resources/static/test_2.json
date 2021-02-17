@@ -1,0 +1,42 @@
+[
+  {
+    "id": 19,
+    "name":"Celular S20+",
+    "category":"Celulares",
+    "brand":"Samsung",
+    "price":150000,
+    "quantity":1,
+    "freeShipping":true,
+    "prestige":"*****"
+  },
+  {
+    "id": 12,
+    "name":"Calza running",
+    "category":"Deportes",
+    "brand":"Nike",
+    "price":7600,
+    "quantity":10,
+    "freeShipping":false,
+    "prestige":"****"
+  },
+  {
+    "id": 15,
+    "name":"Desmalezadora",
+    "category":"Herramientas",
+    "brand":"Makita",
+    "price":9600,
+    "quantity":5,
+    "freeShipping":true,
+    "prestige":"****"
+  },
+  {
+    "id": 21,
+    "name":"Fresadora",
+    "category":"Herramientas",
+    "brand":"Black & Decker",
+    "price":15000,
+    "quantity":2,
+    "freeShipping":true,
+    "prestige":"****"
+  }
+]

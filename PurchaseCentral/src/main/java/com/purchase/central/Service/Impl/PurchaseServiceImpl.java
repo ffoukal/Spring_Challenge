@@ -2,6 +2,8 @@ package com.purchase.central.Service.Impl;
 
 import com.purchase.central.DAO.PurchaseDAO;
 import com.purchase.central.DTO.Request.ArticleRequestDTO;
+import com.purchase.central.DTO.Request.CartItemRequestDTO;
+import com.purchase.central.DTO.Request.CartRequestDTO;
 import com.purchase.central.DTO.Request.PurchaseRequestDTO;
 import com.purchase.central.DTO.Response.ArticleResponseDTO;
 import com.purchase.central.DTO.Response.PurchaseResponseDTO;
@@ -47,7 +49,7 @@ public class PurchaseServiceImpl implements PurchaseService {
                 ArticleResponseDTO item = null;
             try{
                 item = new RestTemplate().getForObject(url, ArticleResponseDTO[].class)[0];
-                item.setPrice((item.getPrice() * i.getQuantity())*(1-(i.getDiscount()/100)));
+                item.setPrice((item.getPrice() * i.getQuantity())*(1.0-(Double.valueOf(i.getDiscount())/100.0)));
                 if(item.getQuantity() < i.getQuantity()){
                     error = true;
                     status = HttpStatus.BAD_REQUEST;
@@ -79,5 +81,31 @@ public class PurchaseServiceImpl implements PurchaseService {
         }
 
         return new ResponseEntity(response, status);
+    }
+
+
+
+    @Override
+    public ResponseEntity checkout() {
+        PurchaseRequestDTO request = new PurchaseRequestDTO();
+        String url = env.getProperty("cart.service");
+        HttpStatus status = null;
+        try{
+            CartRequestDTO cart =   new RestTemplate().getForObject(url, CartRequestDTO.class);
+            List<ArticleRequestDTO> articles = new ArrayList<>();
+            for(CartItemRequestDTO item : cart.getArticles()){
+                ArticleRequestDTO article = new ArticleRequestDTO();
+                article.setProductId(item.getId());
+                article.setQuantity(item.getQuantity());
+                article.setDiscount(item.getDiscount());
+                articles.add(article);
+            }
+            request.setArticles(articles);
+            return this.purchase(request);
+        } catch (Exception e){
+
+        }
+
+        return null;
     }
 }

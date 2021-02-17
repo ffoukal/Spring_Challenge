@@ -1,6 +1,9 @@
-package com.example.cart.DTO.Request;
+package com.purchase.central.DTO.Request;
 
-public class ArticleRequestDTO {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CartItemRequestDTO {
     private Integer id;
     private Integer quantity;
     private Integer discount;
@@ -27,5 +30,17 @@ public class ArticleRequestDTO {
 
     public void setDiscount(Integer discount) {
         this.discount = discount;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append(this.getId())
+                .append("\n")
+                .append(this.getDiscount())
+                .append("\n")
+                .append(this.getQuantity())
+                .append("\n")
+                .toString();
     }
 }

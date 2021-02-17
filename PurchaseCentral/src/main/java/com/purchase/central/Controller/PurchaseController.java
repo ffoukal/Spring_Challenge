@@ -27,4 +27,9 @@ public class PurchaseController {
         return this.service.purchase(request);
     }
 
+    @PostMapping("/checkout")
+    public ResponseEntity checkout(){
+        return this.service.checkout();
+    }
+
 }

@@ -1,49 +1,52 @@
 package com.example.cart.DTO.Response;
 
-import com.example.cart.DTO.Request.ArticleRequestDTO;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class CartResponseDTO {
-    private Integer id;
-    private Date date;
-    private List<ArticleRequestDTO> articles;
-    private Double checkedOut;
+    private String date;
+    private List<ArticleResponseDTO> articles;
+    private Double totalPrice;
 
     public CartResponseDTO() {
-        this.date = new Date();
+        this.date = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(new Date());
+        this.articles = new ArrayList<>();
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public List<ArticleRequestDTO> getArticles() {
+    public List<ArticleResponseDTO> getArticles() {
         return articles;
     }
 
-    public void setArticles(List<ArticleRequestDTO> articles) {
+    public void setArticles(List<ArticleResponseDTO> articles) {
         this.articles = articles;
     }
 
-    public Double getCheckedOut() {
-        return checkedOut;
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setCheckedOut(Double checkedOut) {
-        this.checkedOut = checkedOut;
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("date: ");
+        sb.append(this.date + "\n");
+        sb.append("articles: ");
+        sb.append(this.articles + "\n");
+        sb.append("totalPrice: ");
+        sb.append(this.totalPrice + "\n");
+
+        return sb.toString();
     }
 }
